@@ -52,10 +52,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="min-h-full flex flex-col">{children}</body>
-      <Script id="theme-bootstrap" strategy="beforeInteractive">
-        {themeScript}
-      </Script>
+      <body className="min-h-full flex flex-col">
+        <Script id="theme-bootstrap" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
