@@ -51,9 +51,13 @@ Thanks,
   }, [open, mailto]);
 
   async function copyTemplate() {
-    await navigator.clipboard.writeText(emailTemplate);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 2000);
+    try {
+      await navigator.clipboard.writeText(emailTemplate);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable or denied.
+    }
   }
 
   return (
