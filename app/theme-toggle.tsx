@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(() =>
+    typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light",
+  );
 
   useEffect(() => {
     let initialTheme: Theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
