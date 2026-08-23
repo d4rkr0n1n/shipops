@@ -161,57 +161,38 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="terminal-wrap">
-          <div className="terminal-top">
-            <span>◈ shipops / production</span>
-            <span className="live">
-              <i /> LIVE
-            </span>
+        <div className="engagement-panel">
+          <div className="engagement-heading">
+            <span className="panel-kicker">HOW WE WORK</span>
+            <span className="panel-status">● ACCEPTING WORK</span>
           </div>
-          <div className="terminal-body">
-            <p>
-              <span className="muted">$</span> shipops deploy{" "}
-              <span className="green">--production</span>
-            </p>
-            <div className="log">
+          <h2>Focused infrastructure work, made visible.</h2>
+          <div className="engagement-list">
+            <div>
+              <span>01</span>
               <p>
-                <span>01:42:06</span> Validating Terraform plan...
-              </p>
-              <p>
-                <span>01:42:08</span> Building container <b>api:8f2c1a</b>
-              </p>
-              <p>
-                <span>01:42:24</span> Running security checks...
-              </p>
-              <p>
-                <span>01:42:31</span> Rolling out to <b>eu-west-1</b>
+                <strong>One active request</strong>
+                Keep a prioritized queue and move through it without competing
+                handoffs.
               </p>
             </div>
-            <div className="success">
-              <div>✓</div>
+            <div>
+              <span>02</span>
               <p>
-                <strong>Deployment successful</strong>
-                <br />
-                <span>Production is healthy · 41s</span>
+                <strong>Async by default</strong>
+                Trello is the source of truth, with Slack for lightweight
+                coordination and notifications.
               </p>
             </div>
-            <div className="metrics">
-              <div>
-                <span>UPTIME</span>
-                <strong>99.99%</strong>
-              </div>
-              <div>
-                <span>DEPLOY FREQ.</span>
-                <strong>12.4/day</strong>
-              </div>
-              <div>
-                <span>MTTR</span>
-                <strong>8 min</strong>
-              </div>
+            <div>
+              <span>03</span>
+              <p>
+                <strong>Delivered to your stack</strong>
+                Work, documentation, and implementation stay in your accounts
+                and repositories.
+              </p>
             </div>
           </div>
-          <div className="float-tag tag-one">ZERO DOWNTIME</div>
-          <div className="float-tag tag-two">COST ↓ 32%</div>
         </div>
       </section>
       <div className="tech-strip">
