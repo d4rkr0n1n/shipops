@@ -988,25 +988,34 @@ h2 em {
 .light-button span {
   color: #729600;
 }
-footer {
+.footer {
   min-height: 120px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr 1fr;
   align-items: center;
+  gap: 18px;
   border-top: 1px solid var(--line);
   font-size: 11px;
   color: var(--muted);
 }
-footer p:nth-child(2) {
+.footer-brand {
+  justify-self: start;
+}
+.footer-copy {
+  display: grid;
+  gap: 6px;
   text-align: center;
 }
-footer p:last-child {
-  text-align: right;
+.footer-copy p {
+  margin: 0;
+  line-height: 1.6;
 }
 .footer-links {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 14px;
+  text-align: right;
 }
 .footer-links a {
   color: inherit;
@@ -1067,15 +1076,19 @@ footer p:last-child {
   .nav-profile-name {
     display: none;
   }
-  footer {
+  .footer {
     grid-template-columns: 1fr;
     gap: 12px;
     padding-block: 28px;
   }
-  footer p,
-  footer p:nth-child(2),
-  footer p:last-child {
+  .footer-brand,
+  .footer-copy,
+  .footer-links {
+    justify-self: start;
     text-align: left;
+  }
+  .footer-copy {
+    width: 100%;
   }
   .footer-links {
     justify-content: flex-start;
@@ -1151,15 +1164,19 @@ footer p:last-child {
   .plan {
     padding: 25px;
   }
-  footer {
+  .footer {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 8px;
     padding-block: 35px;
   }
-  footer p:nth-child(2),
-  footer p:last-child {
+  .footer-brand,
+  .footer-copy,
+  .footer-links {
+    justify-self: center;
     text-align: center;
+  }
+  .footer-links {
     margin: 0;
   }
 }

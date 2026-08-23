@@ -191,7 +191,7 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span /> Your DevOps guy, on subscription
+            <span /> Your senior DevOps partner, on subscription
           </p>
           <h1>
             SHIP FASTER.
@@ -415,8 +415,8 @@ export default function Home() {
                 Your dedicated Trello board is the single source of truth for
                 all requests, feedback, approvals, and updates. Slack access is
                 also included for lightweight coordination and notifications.
-                Delivery typically takes 48–72 hours, depending on scope,
-                access, and complexity.
+                Most small requests are completed within 48–72 hours. Larger
+                implementations are broken into weekly delivery milestones.
               </p>
             </article>
             <article>
@@ -439,7 +439,7 @@ export default function Home() {
             <h2>
               ONE SUBSCRIPTION.
               <br />
-              <em>ZERO BOTTLENECKS.</em>
+              <em>FEWER INFRASTRUCTURE BOTTLENECKS.</em>
             </h2>
           </div>
           <ol>
@@ -458,8 +458,8 @@ export default function Home() {
               <div>
                 <strong>We build in your stack</strong>
                 <p>
-                  Work ships in weekly cycles with full visibility in your
-                  existing tools.
+                  Most small work ships in 48–72 hours; larger work moves in
+                  weekly milestones with full visibility in your existing tools.
                 </p>
               </div>
             </li>
@@ -565,13 +565,16 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <footer className="shell">
-        <a className="brand" href="#top">
+      <footer className="shell footer">
+        <a className="brand footer-brand" href="#top">
           <span className="brand-mark">S</span> SHIPOPS
           <span className="dot">.</span>
         </a>
-        <p>DevOps-as-a-Service for ambitious product teams. By Mridul Roy.</p>
-        <p className="footer-links">
+        <div className="footer-copy">
+          <p>Subscription DevOps for Indian startups and small product teams that need reliable cloud infrastructure without hiring a full-time DevOps engineer.</p>
+          <p>By Mridul Roy.</p>
+        </div>
+        <div className="footer-links">
           <a href="https://github.com/d4rkr0n1n" target="_blank" rel="noreferrer">
             GitHub
           </a>
@@ -579,7 +582,7 @@ export default function Home() {
             LinkedIn
           </a>
           <span>© 2026 ShipOps</span>
-        </p>
+        </div>
       </footer>
     </main>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const title = "ShipOps — DevOps as a Service";
-const description = "Senior DevOps expertise on subscription. CI/CD, Terraform, Kubernetes, cloud infrastructure, and GitOps for ambitious product teams.";
+const description = "Subscription DevOps for Indian startups and small product teams that need reliable cloud infrastructure without hiring a full-time DevOps engineer.";
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const metadataBase = new URL(configuredSiteUrl.endsWith("/") ? configuredSiteUrl : `${configuredSiteUrl}/`);
 const assetUrl = (path: string) => new URL(path.replace(/^\//, ""), metadataBase).toString();
