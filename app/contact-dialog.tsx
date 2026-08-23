@@ -85,7 +85,7 @@ Thanks,
 
   return (
     <>
-      <button className="plan-choice" type="button" onClick={() => { setOpen(true); dialogRef.current?.showModal(); }}>
+      <button className="plan-choice" type="button" onClick={() => { const dialog = dialogRef.current; if (!dialog || dialog.open) return; try { dialog.showModal(); setOpen(true); } catch { /* showModal() not allowed */ } }}>
         Choose {planName} <span aria-hidden="true">↗</span>
       </button>
       <dialog className="contact-dialog" ref={dialogRef} aria-labelledby={titleId} onClose={() => setOpen(false)} onClick={(event) => {
