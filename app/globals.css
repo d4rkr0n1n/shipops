@@ -592,10 +592,10 @@ h2 em {
 }
 .plan-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   margin: 45px auto 0;
-  max-width: 790px;
+  max-width: 1180px;
 }
 .plan {
   border: 1px solid var(--line);

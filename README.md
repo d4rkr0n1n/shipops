@@ -7,9 +7,10 @@ ShipOps is a single-page website for a DevOps-as-a-Service offering. It presents
 - Service overview for CI/CD, Terraform, cloud operations, Kubernetes, observability, and GitOps
 - Clear included and excluded work boundaries
 - Async, one-active-request operating model and three-step process explanation
-- Monthly plans in INR:
-	- **Audit**: Rs 399/month
-	- **Launch**: Rs 899/month, marked as the most popular plan
+- Weekly plans and a one-time offer in INR:
+	- **Lite Audit**: Rs 199 one-time offer, shown first
+	- **Audit**: Rs 399/week, marked as the most popular plan
+	- **Launch**: Rs 899/week
 - Contact dialog with a plan-specific email template and `mailto:` links
 - QR codes for the contact email and generated email template
 - Light and dark themes with preference persistence in `localStorage`
@@ -82,7 +83,7 @@ app/
 	page.tsx                 Main landing page and content data
 	contact-dialog.tsx       Plan-specific email dialog and QR codes
 	theme-toggle.tsx         Light/dark theme control
-	layout.tsx               Metadata, icons, and theme bootstrap script
+	layout.tsx               Metadata, icons, and root layout
 	globals.css              Site layout, responsive styles, and themes
 	# (planned) api/checkout/verify/      Checkout verification route (not yet implemented)
 public/                    Static assets
@@ -92,7 +93,7 @@ The main page is a server component. The contact dialog and theme toggle are cli
 
 ## Contact Flow
 
-Selecting a plan opens a dialog addressed to `midlry.mr@gmail.com`. The dialog includes a pre-filled subject and project-requirements template, a button to copy that template, a direct email link, and QR codes generated in the browser.
+Selecting a plan opens a dialog addressed to `midlry.mr@gmail.com`. The dialog includes a pre-filled subject and project-requirements template, a button to copy that template, a direct email link, and QR codes generated in the browser. Recurring plans are weekly; Lite Audit is a one-time offer.
 
 There is currently no active payment provider or checkout verification implementation. Razorpay and other operational integrations remain planned work; do not treat plan selection as a completed subscription purchase.
 

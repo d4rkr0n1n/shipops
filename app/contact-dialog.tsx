@@ -5,7 +5,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 const email = "midlry.mr@gmail.com";
 const qrMailto = `mailto:${email}`;
 
-export default function ContactDialog({ planName }: { planName: string }) {
+export default function ContactDialog({ planName, billing }: { planName: string; billing: "weekly" | "one-time" }) {
   const titleId = useId();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -13,10 +13,10 @@ export default function ContactDialog({ planName }: { planName: string }) {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
   const { emailTemplate, mailto } = useMemo(() => {
-    const computedSubject = `ShipOps ${planName} monthly plan inquiry`;
+    const computedSubject = `ShipOps ${planName} ${billing} plan inquiry`;
     const computedBody = `Hi,
 
-I'm interested in the ShipOps ${planName} monthly plan.
+I'm interested in the ShipOps ${planName} ${billing} plan.
 
 DevOps project requirements:
 - Project scope: [Add details]
@@ -35,7 +35,7 @@ Thanks,
       emailTemplate: `To: ${email}\nSubject: ${computedSubject}\n\n${computedBody}`,
       mailto: `mailto:${email}?subject=${encodeURIComponent(computedSubject)}&body=${encodeURIComponent(computedBody)}`,
     };
-  }, [planName]);
+  }, [billing, planName]);
 
   useEffect(() => {
     if (!open || !canvasRef.current) return;
@@ -110,7 +110,7 @@ Thanks,
             <div className="email-template-head">
               <div>
                 <span>EMAIL TEMPLATE</span>
-                <strong>{planName} monthly plan</strong>
+                <strong>{planName} {billing} plan</strong>
               </div>
               <div className="email-template-actions">
                 <button type="button" onClick={copyTemplate} aria-live="polite">

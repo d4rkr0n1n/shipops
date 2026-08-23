@@ -1,11 +1,36 @@
 import ContactDialog from "./contact-dialog";
 import ThemeToggle from "./theme-toggle";
 
-const plans = [
+type Plan = {
+  id: string;
+  name: string;
+  price: number;
+  billing: "weekly" | "one-time";
+  copy: string;
+  featured?: boolean;
+  features: string[];
+};
+
+const plans: Plan[] = [
+  {
+    id: "lite-audit",
+    name: "Lite Audit",
+    price: 199,
+    billing: "one-time",
+    copy: "A compact one-time review to uncover your next infrastructure wins.",
+    features: [
+      "Focused infrastructure review",
+      "CI/CD and reliability checks",
+      "Top three improvement opportunities",
+      "Short written action plan",
+    ],
+  },
   {
     id: "audit",
     name: "Audit",
     price: 399,
+    billing: "weekly",
+    featured: true,
     copy: "A focused health check for your current cloud and delivery setup.",
     features: [
       "Infrastructure & CI/CD review",
@@ -18,13 +43,13 @@ const plans = [
     id: "launch",
     name: "Launch",
     price: 899,
+    billing: "weekly",
     copy: "For teams shipping their first reliable production stack.",
-    featured: true,
     features: [
       "CI/CD pipeline setup",
       "Cloud infrastructure baseline",
       "Monitoring & alerts",
-      "8 engineering hours / month",
+      "8 engineering hours / week",
     ],
   },
 ];
@@ -55,7 +80,7 @@ const scope = {
     "Infrastructure and delivery work in your existing cloud accounts",
     "CI/CD, IaC, containers, observability, reliability, and cloud-cost tasks",
     "Implementation, documentation, reviews, and async progress updates",
-    "Work up to the monthly engineering capacity included in your plan",
+    "Work up to the capacity or deliverables included in your selected plan",
   ],
   excluded: [
     "Application feature development or product design",
@@ -75,15 +100,15 @@ const faqs = [
   ],
   [
     "How quickly will work be completed?",
-    "Most focused requests move within a few business days. Larger work is broken into visible milestones. Timing depends on complexity, access, feedback, and the monthly capacity in your plan.",
+    "Most focused requests move within a few business days. Larger work is broken into visible milestones. Timing depends on complexity, access, feedback, and the weekly capacity in your plan.",
   ],
   [
     "Can I pause or cancel?",
-    "Yes. Cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three months; work and billing resume afterward unless you cancel.",
+    "For weekly plans, cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three weeks; work and billing resume afterward unless you cancel. Lite Audit is a one-time offer with no renewal.",
   ],
   [
     "What happens to unused capacity?",
-    "Capacity reserves our availability for that billing month and does not roll over. If priorities change, use the queue to direct the remaining time to documentation, reliability, security, or cost improvements.",
+    "Weekly capacity reserves our availability for that billing week and does not roll over. If priorities change, use the queue to direct the remaining time to documentation, reliability, security, or cost improvements.",
   ],
   [
     "Who owns the work?",
@@ -289,7 +314,7 @@ export default function Home() {
               <h3>Pause or cancel</h3>
               <p>
                 Cancel before renewal or pause at a billing boundary for up to
-                three months. Your current paid period remains active.
+                three weeks. Your current paid period remains active.
               </p>
             </article>
           </div>
@@ -344,7 +369,7 @@ export default function Home() {
         <div className="pricing-head">
           <div>
             <p className="eyebrow">
-              <span /> Simple monthly plans
+              <span /> Weekly plans + a one-time offer
             </p>
             <h2>
               THE RIGHT CAPACITY.
@@ -353,8 +378,8 @@ export default function Home() {
             </h2>
           </div>
           <p>
-            No contracts. No hidden retainers. One predictable monthly payment
-            for senior DevOps capacity.
+            No contracts. No hidden retainers. Choose weekly senior DevOps
+            capacity or start with a one-time Lite Audit.
           </p>
         </div>
         <div className="plan-grid">
@@ -364,14 +389,15 @@ export default function Home() {
               key={plan.id}
             >
               {plan.featured && <div className="popular">MOST POPULAR</div>}
+              {plan.billing === "one-time" && <div className="popular">ONE-TIME OFFER</div>}
               <p className="plan-name">{plan.name}</p>
               <p className="plan-copy">{plan.copy}</p>
               <div className="price">
                 <sup>₹</sup>
                 {plan.price.toLocaleString("en-IN")}
-                <span>/mo</span>
+                <span>{plan.billing === "one-time" ? "one time" : "/week"}</span>
               </div>
-              <ContactDialog planName={plan.name} />
+              <ContactDialog planName={plan.name} billing={plan.billing} />
               <ul>
                 {plan.features.map((feature) => (
                   <li key={feature}>
