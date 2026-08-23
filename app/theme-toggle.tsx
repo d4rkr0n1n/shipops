@@ -9,10 +9,15 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const savedThemeRaw = localStorage.getItem("shipops-theme");
-    const savedTheme = savedThemeRaw === "light" || savedThemeRaw === "dark" ? savedThemeRaw : null;
-    const initialTheme: Theme = savedTheme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const savedTheme =
+      savedThemeRaw === "light" || savedThemeRaw === "dark" ? savedThemeRaw : null;
+    const initialTheme: Theme =
+      savedTheme ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
     document.documentElement.dataset.theme = initialTheme;
-    document.documentElement.style.colorScheme = initialTheme
+    document.documentElement.style.colorScheme = initialTheme;
+    setTheme(initialTheme);
   }, []);
 
   function toggleTheme() {
