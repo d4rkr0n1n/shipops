@@ -80,7 +80,7 @@ const scope = {
     "Infrastructure and delivery work in your existing cloud accounts",
     "CI/CD, IaC, containers, observability, reliability, and cloud-cost tasks",
     "Implementation, documentation, reviews, and async progress updates",
-    "Work up to the weekly engineering capacity included in your plan",
+    "Work up to the capacity or deliverables included in your selected plan",
   ],
   excluded: [
     "Application feature development or product design",
