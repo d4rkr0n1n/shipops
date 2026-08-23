@@ -8,11 +8,11 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(null);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("shipops-theme") as Theme | null;
+    const savedThemeRaw = localStorage.getItem("shipops-theme");
+    const savedTheme = savedThemeRaw === "light" || savedThemeRaw === "dark" ? savedThemeRaw : null;
     const initialTheme: Theme = savedTheme ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     document.documentElement.dataset.theme = initialTheme;
-    document.documentElement.style.colorScheme = initialTheme;
-    setTheme(initialTheme);
+    document.documentElement.style.colorScheme = initialTheme
   }, []);
 
   function toggleTheme() {
