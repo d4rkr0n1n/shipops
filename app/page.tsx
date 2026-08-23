@@ -75,6 +75,28 @@ const capabilities = [
     "Kubernetes, observability, backups, and incident playbooks built in.",
   ],
 ];
+const deliverables = [
+  {
+    title: "CI/CD pipeline",
+    description:
+      "A working deployment flow with test checks, build steps, and production-safe release automation.",
+  },
+  {
+    title: "Cloud infrastructure",
+    description:
+      "Infrastructure defined in code so dev, staging, and production behave consistently and can be recreated.",
+  },
+  {
+    title: "Monitoring & alerts",
+    description:
+      "Dashboards, uptime checks, and notifications that tell you when things break before users do.",
+  },
+  {
+    title: "Reliability upgrades",
+    description:
+      "Health checks, backups, rollback plans, and performance fixes that make the system easier to trust.",
+  },
+];
 const experience = [
   "Automated key approval-heavy workflows, reducing processing time by 30–40% across internal teams.",
   "Improved system reliability by designing Spring Boot microservices with 20–25% faster response time and fewer production incidents.",
@@ -140,6 +162,7 @@ export default function Home() {
         </a>
         <nav>
           <a href="#about">About</a>
+          <a href="#deliverables">Deliverables</a>
           <a href="#services">Services</a>
           <a href="#experience">Experience</a>
           <a href="#scope">Scope</a>
@@ -265,6 +288,29 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="deliverables shell" id="deliverables">
+        <div className="section-intro">
+          <div>
+            <p className="eyebrow">
+              <span /> Examples of deliverables
+            </p>
+            <h2>
+              WHAT YOU CAN
+              <br />
+              <em>ACTUALLY GET.</em>
+            </h2>
+          </div>
+        </div>
+        <div className="deliverable-grid">
+          {deliverables.map((item) => (
+            <article key={item.title} className="deliverable-card">
+              <span className="deliverable-tag">Example</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
         </div>
       </section>
       <section className="services shell" id="services">

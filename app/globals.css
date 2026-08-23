@@ -416,6 +416,45 @@ h2 em {
   font-size: 12px;
   line-height: 1.5;
 }
+.deliverables {
+  padding-block: 115px 10px;
+}
+.deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 50px;
+}
+.deliverable-card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.28);
+  padding: 26px 22px;
+  min-height: 200px;
+}
+:root[data-theme="dark"] .deliverable-card {
+  background: rgba(21, 27, 24, 0.9);
+}
+.deliverable-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #101614;
+  background: var(--lime);
+  font: 700 9px/1 var(--font-geist-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 7px 9px;
+}
+.deliverable-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+.deliverable-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 14px;
+}
 .services {
   padding-block: 115px;
 }
