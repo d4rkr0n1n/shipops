@@ -40,10 +40,11 @@ a {
   margin-inline: auto;
 }
 .nav {
-  height: 88px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -69,9 +70,12 @@ a {
 }
 .nav nav {
   display: flex;
-  gap: 34px;
-  font-size: 13px;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  font-size: 12px;
   font-weight: 700;
+  flex: 1;
 }
 .nav nav a:hover {
   opacity: 0.55;
@@ -86,7 +90,8 @@ a {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 .nav-profile-name {
   color: var(--muted);
@@ -1024,6 +1029,12 @@ h2 em {
 .footer-links a:hover {
   color: var(--ink);
 }
+@media (max-width: 1100px) {
+  .nav-profile-name {
+    display: none;
+  }
+}
+
 @media (max-width: 850px) {
   .nav nav {
     display: none;

@@ -162,7 +162,6 @@ export default function Home() {
         </a>
         <nav>
           <a href="#about">About</a>
-          <a href="#deliverables">Deliverables</a>
           <a href="#services">Services</a>
           <a href="#experience">Experience</a>
           <a href="#scope">Scope</a>
