@@ -49,14 +49,16 @@ Thanks,
     if (!open || !templateCanvasRef.current) return;
     const canvas = templateCanvasRef.current;
 
-    void import("qrcode").then(({ default: QRCode }) =>
-      QRCode.toCanvas(canvas, mailto, {
-        width: 220,
-        margin: 2,
-        errorCorrectionLevel: "L",
-        color: { dark: "#101614", light: "#ffffff" },
-      }),
-    );
+    void import("qrcode")
+      .then(({ default: QRCode }) =>
+        QRCode.toCanvas(canvas, mailto, {
+          width: 220,
+          margin: 2,
+          errorCorrectionLevel: "L",
+          color: { dark: "#101614", light: "#ffffff" },
+        }),
+      )
+      .catch(() => {});
   }, [open, mailto]);
 
   async function copyTemplate() {

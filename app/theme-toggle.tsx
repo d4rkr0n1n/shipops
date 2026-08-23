@@ -14,7 +14,8 @@ export default function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    const currentTheme: Theme = theme ?? (document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+    const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
     localStorage.setItem("shipops-theme", nextTheme);
