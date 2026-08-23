@@ -332,6 +332,9 @@ h2 em {
   white-space: nowrap;
   letter-spacing: 0.08em;
 }
+:root[data-theme="dark"] .tech-strip {
+  color: #101614;
+}
 .tech-strip div {
   width: max-content;
   min-width: 100%;
