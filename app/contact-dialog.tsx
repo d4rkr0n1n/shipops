@@ -11,6 +11,7 @@ export default function ContactDialog({ planName }: { planName: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const templateCanvasRef = useRef<HTMLCanvasElement>(null);
   const [copied, setCopied] = useState(false);
+  const [open, setOpen] = useState(false);
   const subject = `ShipOps ${planName} monthly plan inquiry`;
   const body = `Hi,
 
@@ -31,23 +32,23 @@ Thanks,
   const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!open || !canvasRef.current) return;
     void QRCode.toCanvas(canvasRef.current, qrMailto, {
       width: 176,
       margin: 1,
       color: { dark: "#101614", light: "#ffffff" },
     });
-  }, [qrMailto]);
+  }, [open, qrMailto]);
 
   useEffect(() => {
-    if (!templateCanvasRef.current) return;
+    if (!open || !templateCanvasRef.current) return;
     void QRCode.toCanvas(templateCanvasRef.current, mailto, {
       width: 220,
       margin: 2,
       errorCorrectionLevel: "L",
       color: { dark: "#101614", light: "#ffffff" },
     });
-  }, [mailto]);
+  }, [open, mailto]);
 
   async function copyTemplate() {
     await navigator.clipboard.writeText(emailTemplate);
@@ -57,7 +58,7 @@ Thanks,
 
   return (
     <>
-      <button className="plan-choice" type="button" onClick={() => dialogRef.current?.showModal()}>
+      <button className="plan-choice" type="button" onClick={() => { setOpen(true); dialogRef.current?.showModal(); }}>
         Choose {planName} <span aria-hidden="true">↗</span>
       </button>
       <dialog className="contact-dialog" ref={dialogRef} aria-labelledby={`contact-title-${planName}`} onClick={(event) => {
