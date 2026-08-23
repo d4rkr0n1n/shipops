@@ -1,23 +1,59 @@
 "use client";
 
 import QRCode from "qrcode";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const email = "midlry.mr@gmail.com";
-const mailto = `mailto:${email}`;
+const qrMailto = `mailto:${email}`;
 
 export default function ContactDialog({ planName }: { planName: string }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const templateCanvasRef = useRef<HTMLCanvasElement>(null);
+  const [copied, setCopied] = useState(false);
+  const subject = `ShipOps ${planName} monthly plan inquiry`;
+  const body = `Hi,
+
+I'm interested in the ShipOps ${planName} monthly plan.
+
+DevOps project requirements:
+- Project scope: [Add details]
+- Current setup: [Add details]
+- Key challenges: [Add details]
+- Expected outcomes: [Add details]
+- Preferred timeline: [Add details]
+
+Please let me know the next steps and availability.
+
+Thanks,
+[Your name]`;
+  const emailTemplate = `To: ${email}\nSubject: ${subject}\n\n${body}`;
+  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    void QRCode.toCanvas(canvasRef.current, mailto, {
+    void QRCode.toCanvas(canvasRef.current, qrMailto, {
       width: 176,
       margin: 1,
       color: { dark: "#101614", light: "#ffffff" },
     });
-  }, []);
+  }, [qrMailto]);
+
+  useEffect(() => {
+    if (!templateCanvasRef.current) return;
+    void QRCode.toCanvas(templateCanvasRef.current, mailto, {
+      width: 220,
+      margin: 2,
+      errorCorrectionLevel: "L",
+      color: { dark: "#101614", light: "#ffffff" },
+    });
+  }, [mailto]);
+
+  async function copyTemplate() {
+    await navigator.clipboard.writeText(emailTemplate);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <>
@@ -40,6 +76,24 @@ export default function ContactDialog({ planName }: { planName: string }) {
             <div className="qr-wrap">
               <canvas ref={canvasRef} aria-label={`QR code to email ${email}`} role="img" />
               <span>SCAN TO EMAIL</span>
+            </div>
+          </div>
+          <div className="email-template">
+            <div className="email-template-head">
+              <div>
+                <span>EMAIL TEMPLATE</span>
+                <strong>{planName} monthly plan</strong>
+              </div>
+              <button type="button" onClick={copyTemplate} aria-live="polite">
+                {copied ? "Copied ✓" : "Copy template"}
+              </button>
+            </div>
+            <div className="email-template-body">
+              <pre>{emailTemplate}</pre>
+              <div className="qr-wrap template-qr-wrap">
+                <canvas ref={templateCanvasRef} aria-label={`QR code for the ${planName} plan email template`} role="img" />
+                <span>SCAN TEMPLATE</span>
+              </div>
             </div>
           </div>
         </div>

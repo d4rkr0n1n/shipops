@@ -683,7 +683,7 @@ h2 em {
   margin-top: 30px;
 }
 .contact-dialog {
-  width: min(720px, calc(100% - 32px));
+  width: min(800px, calc(100% - 32px));
   max-width: none;
   margin: auto;
   inset: 0;
@@ -765,6 +765,62 @@ h2 em {
   font: 900 9px/1 monospace;
   letter-spacing: 0.1em;
   margin-top: 8px;
+}
+.email-template {
+  margin-top: 26px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 75%, var(--line));
+}
+.email-template-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--line);
+}
+.email-template-head div {
+  display: grid;
+  gap: 4px;
+}
+.email-template-head span {
+  color: var(--muted);
+  font: 800 8px/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.12em;
+}
+.email-template-head strong {
+  font-size: 13px;
+}
+.email-template-head button {
+  border: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 13px;
+  font: 800 11px/1 Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+.email-template-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+}
+.email-template pre {
+  max-height: 220px;
+  overflow: auto;
+  margin: 0;
+  padding: 16px;
+  color: var(--muted);
+  white-space: pre-wrap;
+  font: 12px/1.6 var(--font-geist-mono), monospace;
+}
+.template-qr-wrap {
+  align-self: stretch;
+  justify-content: center;
+  border-width: 0 0 0 1px;
+}
+.template-qr-wrap canvas {
+  width: 190px;
+  height: 190px;
 }
 .faq {
   display: grid;
@@ -908,6 +964,13 @@ footer p:last-child {
   }
   .dialog-email {
     font-size: 14px;
+  }
+  .email-template-body {
+    grid-template-columns: 1fr;
+  }
+  .template-qr-wrap {
+    border-width: 1px 0 0;
+    justify-self: stretch;
   }
   .shell {
     width: min(100% - 30px, 1180px);
