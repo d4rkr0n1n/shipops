@@ -11,7 +11,6 @@ ShipOps is a single-page website for a DevOps-as-a-Service offering. It presents
 	- **Lite Audit**: Rs 199 one-time offer, shown first
 	- **Audit**: Rs 399/week, marked as the most popular plan
 	- **Launch**: Rs 899/week
-	- **Lite Audit**: Rs 199 one-time offer
 - Contact dialog with a plan-specific email template and `mailto:` links
 - QR codes for the contact email and generated email template
 - Light and dark themes with preference persistence in `localStorage`
