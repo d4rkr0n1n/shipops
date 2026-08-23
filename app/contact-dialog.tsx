@@ -1,6 +1,5 @@
 "use client";
 
-import QRCode from "qrcode";
 import { useEffect, useRef, useState } from "react";
 
 const email = "midlry.mr@gmail.com";
@@ -33,21 +32,29 @@ Thanks,
 
   useEffect(() => {
     if (!open || !canvasRef.current) return;
-    void QRCode.toCanvas(canvasRef.current, qrMailto, {
-      width: 176,
-      margin: 1,
-      color: { dark: "#101614", light: "#ffffff" },
-    });
+    const canvas = canvasRef.current;
+
+    void import("qrcode").then(({ default: QRCode }) =>
+      QRCode.toCanvas(canvas, qrMailto, {
+        width: 176,
+        margin: 1,
+        color: { dark: "#101614", light: "#ffffff" },
+      }),
+    );
   }, [open, qrMailto]);
 
   useEffect(() => {
     if (!open || !templateCanvasRef.current) return;
-    void QRCode.toCanvas(templateCanvasRef.current, mailto, {
-      width: 220,
-      margin: 2,
-      errorCorrectionLevel: "L",
-      color: { dark: "#101614", light: "#ffffff" },
-    });
+    const canvas = templateCanvasRef.current;
+
+    void import("qrcode").then(({ default: QRCode }) =>
+      QRCode.toCanvas(canvas, mailto, {
+        width: 220,
+        margin: 2,
+        errorCorrectionLevel: "L",
+        color: { dark: "#101614", light: "#ffffff" },
+      }),
+    );
   }, [open, mailto]);
 
   async function copyTemplate() {

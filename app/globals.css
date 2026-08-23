@@ -145,6 +145,11 @@ a {
   color: var(--lime);
   margin-left: 14px;
 }
+:root[data-theme="dark"] .nav-cta span,
+:root[data-theme="dark"] .primary span,
+:root[data-theme="dark"] .plan-choice span {
+  color: #101614;
+}
 .hero {
   min-height: 690px;
   display: grid;
