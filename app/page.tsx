@@ -107,6 +107,14 @@ const faqs = [
     "For weekly plans, cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three weeks; work and billing resume afterward unless you cancel. Lite Audit is a one-time offer with no renewal.",
   ],
   [
+    "How do I pay?",
+    "Secure manual payment via UPI or bank transfer after project confirmation.",
+  ],
+  [
+    "Who operates ShipOps, and is GST charged?",
+    "ShipOps is currently operated by Mridul Roy as an independent DevOps consulting service. GST is not charged while the service provider is not registered under GST.",
+  ],
+  [
     "What happens to unused capacity?",
     "Weekly capacity reserves our availability for that billing week and does not roll over. If priorities change, use the queue to direct the remaining time to documentation, reliability, security, or cost improvements.",
   ],
