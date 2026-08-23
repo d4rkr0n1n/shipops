@@ -34,13 +34,15 @@ Thanks,
     if (!open || !canvasRef.current) return;
     const canvas = canvasRef.current;
 
-    void import("qrcode").then(({ default: QRCode }) =>
-      QRCode.toCanvas(canvas, qrMailto, {
-        width: 176,
-        margin: 1,
-        color: { dark: "#101614", light: "#ffffff" },
-      }),
-    );
+    void import("qrcode")
+      .then(({ default: QRCode }) =>
+        QRCode.toCanvas(canvas, qrMailto, {
+          width: 176,
+          margin: 1,
+          color: { dark: "#101614", light: "#ffffff" },
+        }).catch(() => {}),
+      )
+      .catch(() => {});
   }, [open, qrMailto]);
 
   useEffect(() => {
