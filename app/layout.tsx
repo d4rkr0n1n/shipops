@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 
 const title = "ShipOps — DevOps as a Service";
@@ -37,9 +36,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <Script id="theme-init" strategy="beforeInteractive">
-        {`try{const saved=localStorage.getItem("shipops-theme");const theme=saved||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme}catch{}`}
-      </Script>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

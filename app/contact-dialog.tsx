@@ -84,9 +84,12 @@ Thanks,
                 <span>EMAIL TEMPLATE</span>
                 <strong>{planName} monthly plan</strong>
               </div>
-              <button type="button" onClick={copyTemplate} aria-live="polite">
-                {copied ? "Copied ✓" : "Copy template"}
-              </button>
+              <div className="email-template-actions">
+                <button type="button" onClick={copyTemplate} aria-live="polite">
+                  {copied ? "Copied ✓" : "Copy template"}
+                </button>
+                <a href={mailto}>Email <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
             <div className="email-template-body">
               <pre>{emailTemplate}</pre>

@@ -773,6 +773,7 @@ h2 em {
 }
 .email-template-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -791,13 +792,23 @@ h2 em {
 .email-template-head strong {
   font-size: 13px;
 }
-.email-template-head button {
+.email-template-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.email-template-actions button,
+.email-template-actions a {
   border: 0;
   background: var(--ink);
   color: var(--paper);
   padding: 10px 13px;
   font: 800 11px/1 Arial, Helvetica, sans-serif;
   cursor: pointer;
+}
+.email-template-actions a {
+  background: var(--lime);
+  color: #101614;
 }
 .email-template-body {
   display: grid;
