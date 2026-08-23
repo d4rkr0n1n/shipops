@@ -5,17 +5,26 @@ import { useEffect, useState } from "react";
 type Theme = "light" | "dark";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme | null>(null);
-  const resolvedTheme: Theme = theme ?? (typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+  const [theme, setTheme] = useState<Theme>(() =>
+    typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light",
+  );
 
   useEffect(() => {
-    const appliedTheme = document.documentElement.dataset.theme;
-    const initialTheme: Theme = appliedTheme === "dark" ? "dark" : "light";
+    let initialTheme: Theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    try {
+      const savedTheme = localStorage.getItem("shipops-theme");
+      if (savedTheme === "light" || savedTheme === "dark") initialTheme = savedTheme;
+    } catch {
+      // Storage unavailable or denied.
+    }
+
+    document.documentElement.dataset.theme = initialTheme;
+    document.documentElement.style.colorScheme = initialTheme;
     setTheme(initialTheme);
   }, []);
 
   function toggleTheme() {
-    const currentTheme: Theme = resolvedTheme;
+    const currentTheme = theme;
     const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
@@ -31,11 +40,11 @@ export default function ThemeToggle() {
     <button
       className="theme-toggle"
       type="button"
-      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
-      title={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       onClick={toggleTheme}
     >
-      <span aria-hidden="true">{resolvedTheme === "dark" ? "☀" : "◐"}</span>
+      <span aria-hidden="true">{theme === "dark" ? "☀" : "◐"}</span>
     </button>
   );
 }

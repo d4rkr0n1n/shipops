@@ -80,7 +80,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
-          NEXT_PUBLIC_SITE_URL: https://d4rkr0n1n.github.io/shipopp/
+          NEXT_PUBLIC_SITE_URL: https://d4rkr0n1n.github.io/shipops/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
