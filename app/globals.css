@@ -364,6 +364,58 @@ h2 em {
 .tech-strip span {
   margin: 0 25px;
 }
+.about {
+  padding-block: 110px 25px;
+}
+.about-card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.28);
+  padding: 34px;
+  box-shadow: 12px 12px 0 rgba(199, 255, 41, 0.22);
+}
+:root[data-theme="dark"] .about-card {
+  background: rgba(21, 27, 24, 0.9);
+}
+.about-copy {
+  max-width: 760px;
+}
+.about-copy h2 {
+  font-size: clamp(42px, 5vw, 72px);
+  margin: 20px 0 8px;
+}
+.about-location {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.about-copy p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+.about-stats div {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.about-stats strong {
+  display: block;
+  font-size: clamp(22px, 2vw, 32px);
+  letter-spacing: -0.05em;
+  margin-bottom: 6px;
+}
+.about-stats span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
 .services {
   padding-block: 115px;
 }

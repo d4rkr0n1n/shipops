@@ -139,6 +139,7 @@ export default function Home() {
           <span className="dot">.</span>
         </a>
         <nav>
+          <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#experience">Experience</a>
           <a href="#scope">Scope</a>
@@ -227,6 +228,45 @@ export default function Home() {
           KUBERNETES <span>✦</span> AWS / GCP / AZURE <span>✦</span> GITOPS
         </div>
       </div>
+      <section className="about shell" id="about">
+        <div className="about-card">
+          <div className="about-copy">
+            <p className="eyebrow">
+              <span /> About me
+            </p>
+            <h2>
+              MRIDUL <em>ROY</em>
+            </h2>
+            <p className="about-location">Navi Mumbai, Maharashtra, India</p>
+            <p>
+              I’m a DevOps-minded engineer focused on cloud systems, automation,
+              and dependable delivery. My work sits at the intersection of
+              infrastructure operations, backend engineering, and developer
+              experience—building the foundations that help teams ship faster
+              without introducing chaos.
+            </p>
+            <p>
+              From CI/CD pipelines and container workflows to infrastructure as
+              code and service reliability, I build practical systems that are
+              easy to operate, easy to trust, and ready to scale with the product.
+            </p>
+            <div className="about-stats">
+              <div>
+                <strong>852</strong>
+                <span>followers</span>
+              </div>
+              <div>
+                <strong>500+</strong>
+                <span>connections</span>
+              </div>
+              <div>
+                <strong>Cloud</strong>
+                <span>DevOps & automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="services shell" id="services">
         <div className="section-intro">
           <div>
