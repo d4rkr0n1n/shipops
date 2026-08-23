@@ -6,6 +6,7 @@ type Theme = "light" | "dark";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme | null>(null);
+  const resolvedTheme: Theme = theme ?? (typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light");
 
   useEffect(() => {
     const appliedTheme = document.documentElement.dataset.theme;
@@ -14,7 +15,7 @@ export default function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    const currentTheme: Theme = theme ?? (document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+    const currentTheme: Theme = resolvedTheme;
     const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
@@ -26,11 +27,11 @@ export default function ThemeToggle() {
     <button
       className="theme-toggle"
       type="button"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
+      title={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
       onClick={toggleTheme}
     >
-      <span aria-hidden="true">{theme === "dark" ? "☀" : "◐"}</span>
+      <span aria-hidden="true">{resolvedTheme === "dark" ? "☀" : "◐"}</span>
     </button>
   );
 }
