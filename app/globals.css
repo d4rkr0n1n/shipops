@@ -10,6 +10,12 @@
   --line: #c9c8bf;
   --muted: #656a65;
 }
+:root[data-theme="dark"] {
+  --ink: #eef3ee;
+  --paper: #0d1210;
+  --line: #303936;
+  --muted: #a3aca7;
+}
 * {
   box-sizing: border-box;
 }
@@ -21,6 +27,9 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
 }
 a {
   color: inherit;
@@ -73,6 +82,63 @@ a {
   padding: 13px 18px;
   font-size: 13px;
   font-weight: 700;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 18px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.theme-toggle:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+:root[data-theme="dark"] .brand-mark {
+  background: var(--lime);
+  color: #101614;
+}
+:root[data-theme="dark"] .nav-cta,
+:root[data-theme="dark"] .primary,
+:root[data-theme="dark"] .plan-choice {
+  background: var(--lime);
+  color: #101614;
+}
+:root[data-theme="dark"] .scope,
+:root[data-theme="dark"] .process,
+:root[data-theme="dark"] .plan.featured {
+  background: #080d0b;
+  color: #fff;
+}
+:root[data-theme="dark"] .plan {
+  background: #151b18;
+}
+:root[data-theme="dark"] .featured .plan-choice {
+  background: var(--lime);
+  color: #101614;
+}
+:root[data-theme="dark"] .contact-dialog-card {
+  background: #151b18;
+  color: #eef3ee;
+}
+:root[data-theme="dark"] .contact-dialog-content strong,
+:root[data-theme="dark"] .dialog-close {
+  color: #eef3ee;
+}
+:root[data-theme="dark"] .dialog-email {
+  color: var(--lime);
 }
 .nav-cta span,
 .button span {
@@ -619,6 +685,8 @@ h2 em {
 .contact-dialog {
   width: min(720px, calc(100% - 32px));
   max-width: none;
+  margin: auto;
+  inset: 0;
   padding: 0;
   border: 0;
   background: transparent;

@@ -1,4 +1,5 @@
 import ContactDialog from "./contact-dialog";
+import ThemeToggle from "./theme-toggle";
 
 const plans = [
   {
@@ -105,9 +106,12 @@ export default function Home() {
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
+      <div className="nav-actions">
+        <ThemeToggle />
         <a className="nav-cta" href="#pricing">
           View plans <span>↗</span>
         </a>
+      </div>
       </header>
       <section className="hero shell" id="top">
         <div className="hero-copy">
