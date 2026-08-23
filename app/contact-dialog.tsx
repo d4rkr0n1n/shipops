@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 const email = "midlry.mr@gmail.com";
 const qrMailto = `mailto:${email}`;
@@ -12,8 +12,9 @@ export default function ContactDialog({ planName }: { planName: string }) {
   const templateCanvasRef = useRef<HTMLCanvasElement>(null);
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(false);
-  const subject = `ShipOps ${planName} monthly plan inquiry`;
-  const body = `Hi,
+  const { emailTemplate, mailto } = useMemo(() => {
+    const computedSubject = `ShipOps ${planName} monthly plan inquiry`;
+    const computedBody = `Hi,
 
 I'm interested in the ShipOps ${planName} monthly plan.
 
@@ -28,8 +29,13 @@ Please let me know the next steps and availability.
 
 Thanks,
 [Your name]`;
-  const emailTemplate = `To: ${email}\nSubject: ${subject}\n\n${body}`;
-  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return {
+      subject: computedSubject,
+      body: computedBody,
+      emailTemplate: `To: ${email}\nSubject: ${computedSubject}\n\n${computedBody}`,
+      mailto: `mailto:${email}?subject=${encodeURIComponent(computedSubject)}&body=${encodeURIComponent(computedBody)}`,
+    };
+  }, [planName]);
 
   useEffect(() => {
     if (!open || !canvasRef.current) return;
@@ -57,7 +63,7 @@ Thanks,
           margin: 2,
           errorCorrectionLevel: "L",
           color: { dark: "#101614", light: "#ffffff" },
-        }),
+        }).catch(() => {}),
       )
       .catch(() => {});
   }, [open, mailto]);
@@ -72,16 +78,21 @@ Thanks,
     }
   }
 
+  function closeDialog() {
+    setOpen(false);
+    dialogRef.current?.close();
+  }
+
   return (
     <>
       <button className="plan-choice" type="button" onClick={() => { setOpen(true); dialogRef.current?.showModal(); }}>
         Choose {planName} <span aria-hidden="true">↗</span>
       </button>
-      <dialog className="contact-dialog" ref={dialogRef} aria-labelledby={titleId} onClick={(event) => {
-        if (event.target === event.currentTarget) event.currentTarget.close();
+      <dialog className="contact-dialog" ref={dialogRef} aria-labelledby={titleId} onClose={() => setOpen(false)} onClick={(event) => {
+        if (event.target === event.currentTarget) closeDialog();
       }}>
         <div className="contact-dialog-card">
-          <button className="dialog-close" type="button" aria-label="Close dialog" onClick={() => dialogRef.current?.close()}>×</button>
+          <button className="dialog-close" type="button" aria-label="Close dialog" onClick={closeDialog}>×</button>
           <p className="eyebrow"><span /> Let&apos;s talk</p>
           <h3 id={titleId}>Thank you for reaching out.</h3>
           <div className="contact-dialog-content">
