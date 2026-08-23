@@ -104,7 +104,7 @@ const faqs = [
   ],
   [
     "Can I pause or cancel?",
-    "Yes. Cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three weeks; work and billing resume afterward unless you cancel.",
+    "For weekly plans, cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three weeks; work and billing resume afterward unless you cancel. Lite Audit is a one-time offer with no renewal.",
   ],
   [
     "What happens to unused capacity?",
