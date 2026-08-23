@@ -139,7 +139,18 @@ export default function Home() {
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
-      <div className="nav-actions">
+        <div className="nav-actions">
+          <span className="nav-profile-name">Mridul Roy</span>
+          <a className="social-link" href="https://github.com/d4rkr0n1n" target="_blank" rel="noreferrer" aria-label="Mridul Roy on GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.5a9.5 9.5 0 0 0-3 18.51c.47.09.64-.2.64-.45v-1.67c-2.62.57-3.17-1.11-3.17-1.11-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.77.79.09-.62.33-1.03.6-1.27-2.09-.24-4.29-1.05-4.29-4.67 0-1.03.37-1.87.98-2.53-.1-.24-.42-1.2.09-2.5 0 0 .8-.26 2.62.97a9.1 9.1 0 0 1 4.77 0c1.82-1.23 2.62-.97 2.62-.97.51 1.3.19 2.26.09 2.5.61.66.98 1.5.98 2.53 0 3.63-2.2 4.43-4.3 4.66.34.3.64.87.64 1.76v2.61c0 .25.17.54.65.45A9.5 9.5 0 0 0 12 2.5Z" />
+            </svg>
+          </a>
+          <a className="social-link" href="https://www.linkedin.com/in/d4rkr0n1n/" target="_blank" rel="noreferrer" aria-label="Mridul Roy on LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5.2 6.8A1.7 1.7 0 1 0 5.2 3.4a1.7 1.7 0 0 0 0 3.4ZM3.7 20.6h3V8.5h-3v12.1ZM8.6 8.5h2.9v1.65h.04c.4-.76 1.38-1.96 3.03-1.96 3.24 0 3.84 2.13 3.84 4.9v7.51h-3v-6.66c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.72-2.55 3.51v6.78h-3V8.5Z" />
+            </svg>
+          </a>
         <ThemeToggle />
         <a className="nav-cta" href="#pricing">
           View plans <span>↗</span>
@@ -449,8 +460,16 @@ export default function Home() {
           <span className="brand-mark">S</span> SHIPOPS
           <span className="dot">.</span>
         </a>
-        <p>DevOps-as-a-Service for ambitious product teams.</p>
-        <p>© 2026 ShipOps</p>
+        <p>DevOps-as-a-Service for ambitious product teams. By Mridul Roy.</p>
+        <p className="footer-links">
+          <a href="https://github.com/d4rkr0n1n" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/d4rkr0n1n/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <span>© 2026 ShipOps</span>
+        </p>
       </footer>
     </main>
   );
