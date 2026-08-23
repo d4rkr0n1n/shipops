@@ -84,7 +84,7 @@ app/
 	theme-toggle.tsx         Light/dark theme control
 	layout.tsx               Metadata, icons, and theme bootstrap script
 	globals.css              Site layout, responsive styles, and themes
-	api/checkout/verify/      Reserved checkout verification location
+	# (planned) api/checkout/verify/      Checkout verification route (not yet implemented)
 public/                    Static assets
 ```
 
