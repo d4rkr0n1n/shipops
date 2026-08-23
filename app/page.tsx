@@ -75,6 +75,12 @@ const capabilities = [
     "Kubernetes, observability, backups, and incident playbooks built in.",
   ],
 ];
+const experience = [
+  "Automated key approval-heavy workflows, reducing processing time by 30–40% across internal teams.",
+  "Improved system reliability by designing Spring Boot microservices with 20–25% faster response time and fewer production incidents.",
+  "Integrated DevSecOps checks (SAST, SCA, secrets hygiene) into CI/CD pipelines, helping cut vulnerability occurrences by ~35%.",
+  "Collaborated with cross-functional tech + operations teams to streamline deployments, shrinking release cycles from weekly to 2–3 days.",
+];
 const scope = {
   included: [
     "Infrastructure and delivery work in your existing cloud accounts",
@@ -134,6 +140,7 @@ export default function Home() {
         </a>
         <nav>
           <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
           <a href="#scope">Scope</a>
           <a href="#process">Process</a>
           <a href="#pricing">Pricing</a>
@@ -251,6 +258,23 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+      <section className="experience shell" id="experience">
+        <div className="experience-intro">
+          <p className="eyebrow">
+            <span /> Relevant experience
+          </p>
+          <h2>
+            RESULTS THAT
+            <br />
+            <em>MOVE SYSTEMS.</em>
+          </h2>
+        </div>
+        <ul className="experience-list">
+          {experience.map((achievement) => (
+            <li key={achievement}>{achievement}</li>
+          ))}
+        </ul>
       </section>
       <section className="scope" id="scope">
         <div className="shell">
