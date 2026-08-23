@@ -19,7 +19,11 @@ export default function ThemeToggle() {
     const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
-    localStorage.setItem("shipops-theme", nextTheme);
+    try {
+      localStorage.setItem("shipops-theme", nextTheme);
+    } catch {
+      // Storage unavailable or denied.
+    }
     setTheme(nextTheme);
   }
 
