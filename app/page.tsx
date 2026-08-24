@@ -595,6 +595,115 @@ export default function Home() {
           </details>
           <details>
             <summary>
+              No Refunds
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Payments are non-refundable once work has been scheduled or
+                started. Please confirm that the plan, scope, and timing fit
+                before payment. Any exception must be agreed in writing before
+                work begins.
+              </p>
+              <p>
+                Email is the official written channel for approvals, scope
+                changes, payment decisions, and other engagement-related
+                confirmations. These email records will be treated as the
+                written record of the parties&apos; agreement.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Cancellation Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Payments are handled on an ad hoc basis, so there is no automatic
+                renewal or long-term subscription commitment. If the service is
+                not a good fit, you can simply choose not to book or pay for the
+                following week. Any work already confirmed or started for the
+                current period remains payable, and unused capacity does not roll
+                over. Lite Audit is a one-time offer.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Service Agreement
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Before work starts, both parties confirm the selected plan,
+                services, price, payment terms, access requirements, delivery
+                expectations, and responsibilities. The confirmed agreement
+                governs the engagement together with these policies.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Statement-of-Work Process
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Larger or clearly defined implementations are documented in a
+                statement of work before execution. It records the objective,
+                deliverables, assumptions, dependencies, timeline, and approval
+                criteria. Any material scope change is reviewed and agreed in
+                writing before it is added.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Data-access and Credential-handling Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Access is limited to the systems, repositories, and data needed
+                for the agreed work. Clients should provide temporary,
+                least-privilege access wherever possible and revoke access when
+                the engagement ends.
+              </p>
+              <p>
+                Do not send passwords, private keys, API tokens, or other
+                secrets by email or through the website. Use the client&apos;s
+                approved secure secret-management process. ShipOps will not copy,
+                disclose, or use client data except as needed to provide the
+                agreed services.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Liability and Service-availability Boundaries
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                ShipOps will provide services with reasonable care, but does not
+                guarantee uninterrupted availability, zero incidents, or a
+                specific business result. Delivery can be affected by cloud
+                providers, SaaS tools, networks, client systems, access delays,
+                approvals, and events outside ShipOps&apos;s reasonable control.
+              </p>
+              <p>
+                ShipOps is not a 24/7 help desk or guaranteed on-call service.
+                Clients remain responsible for their applications, accounts,
+                backups, business decisions, and third-party charges. To the
+                extent permitted by law, liability is limited to the fees paid
+                for the specific service giving rise to the claim, excluding
+                indirect or consequential losses.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
               Privacy Policy
               <span aria-hidden="true">+</span>
             </summary>
