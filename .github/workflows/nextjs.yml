@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: ShipOps Website Deployment
+name: ShipOps Website Deployment Dev Environment
 
 on:
   # Runs on pushes targeting the default branch
