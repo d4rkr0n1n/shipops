@@ -549,6 +549,79 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="legal shell" id="legal">
+        <div className="legal-intro">
+          <p className="eyebrow">
+            <span /> Legal &amp; policies
+          </p>
+          <h2>
+            CLEAR TERMS.
+            <br />
+            <em>NO SURPRISES.</em>
+          </h2>
+          <p>
+            The basics of working with ShipOps, written plainly. These policies
+            apply to the website and consulting services operated by Mridul Roy.
+          </p>
+        </div>
+        <div className="legal-list">
+          <details open>
+            <summary>
+              Terms of Service
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                By requesting or engaging ShipOps services, you agree to confirm
+                the scope, plan, price, access, and delivery expectations before
+                work begins. A plan selection is an enquiry, not a completed
+                purchase. Work starts after project confirmation and payment
+                arrangements are agreed.
+              </p>
+              <p>
+                ShipOps provides DevOps consulting and implementation within the
+                agreed plan capacity. Delivery depends on scope, access,
+                approvals, and third-party systems. Cloud-provider, SaaS, domain,
+                and other third-party charges are paid by the client.
+              </p>
+              <p>
+                Work is delivered into the client&apos;s accounts and repositories.
+                After outstanding invoices are paid, the client owns the
+                project-specific implementation and documentation. Either party
+                may pause or end the engagement according to the agreed billing
+                terms.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Privacy Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                ShipOps collects information you choose to share, such as your
+                name, email address, company details, project requirements, and
+                messages sent through the contact flow. This information is used
+                only to respond to enquiries, assess fit, and deliver requested
+                services.
+              </p>
+              <p>
+                ShipOps does not sell your personal information. Information may
+                be shared with service providers needed to communicate or deliver
+                the work, and only for that purpose. You should not send
+                passwords, private keys, payment credentials, or other secrets
+                through the website or email enquiry.
+              </p>
+              <p>
+                To ask about, correct, or delete information you have shared,
+                contact <a href="mailto:midlry.mr@gmail.com">midlry.mr@gmail.com</a>.
+                This policy may be updated when the service or its tools change.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
       <section className="cta" id="contact">
         <div className="shell">
           <p className="eyebrow light">

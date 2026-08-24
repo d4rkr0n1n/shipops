@@ -1,5 +1,7 @@
 # ShipOps
 
+[![ShipOps Website Deployment](https://github.com/d4rkr0n1n/shipops/actions/workflows/nextjs.yml/badge.svg?branch=dev)](https://github.com/d4rkr0n1n/shipops/actions/workflows/nextjs.yml)
+
 ShipOps is a single-page website for a DevOps-as-a-Service offering. It presents subscription plans, explains the delivery model and scope, and gives prospective clients a direct way to start an email conversation.
 
 ## Features

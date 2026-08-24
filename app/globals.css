@@ -971,6 +971,63 @@ h2 em {
   line-height: 1.7;
   margin: 17px 45px 2px 0;
 }
+.legal {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 90px;
+  padding-block: 0 110px;
+}
+.legal-intro > p:last-child {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 390px;
+}
+.legal-list {
+  border-top: 1px solid var(--line);
+}
+.legal-list details {
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+}
+.legal-list summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-weight: 800;
+  font-size: 15px;
+}
+.legal-list summary::-webkit-details-marker {
+  display: none;
+}
+.legal-list summary span {
+  color: #769b00;
+  font: 400 24px/15px monospace;
+  transition: transform 0.2s;
+}
+.legal-list details[open] summary span {
+  transform: rotate(45deg);
+}
+.legal-content {
+  margin: 17px 45px 2px 0;
+}
+.legal-content p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.legal-content p:last-child {
+  margin-bottom: 0;
+}
+.legal-content a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .cta {
   background: #779d00;
   color: #fff;
@@ -1057,7 +1114,8 @@ h2 em {
   .process-inner,
   .pricing-head,
   .faq,
-  .experience {
+  .experience,
+  .legal {
     grid-template-columns: 1fr;
     gap: 25px;
   }
