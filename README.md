@@ -2,19 +2,21 @@
 
 [![ShipOps Website Deployment](https://github.com/d4rkr0n1n/shipops/actions/workflows/nextjs.yml/badge.svg?branch=dev)](https://github.com/d4rkr0n1n/shipops/actions/workflows/nextjs.yml)
 
-ShipOps is a single-page website for a DevOps-as-a-Service offering. It presents subscription plans, explains the delivery model and scope, and gives prospective clients a direct way to start an email conversation.
+ShipOps is a single-page website for subscription DevOps services for Indian startups and small product teams that need reliable cloud infrastructure without hiring a full-time DevOps engineer. It presents practical deliverables, the delivery model, scope boundaries, legal policies, and a direct email-based contact flow.
 
 ## Features
 
 - Service overview for CI/CD, Terraform, cloud operations, Kubernetes, observability, and GitOps
+- Example deliverables including CI/CD pipelines, cloud infrastructure, monitoring, alerts, and reliability upgrades
 - Clear included and excluded work boundaries
 - Async, one-active-request operating model and three-step process explanation
-- Weekly plans and a one-time offer in INR:
+- Weekly capacity plans and a one-time offer in INR, paid on an ad hoc basis:
 	- **Lite Audit**: Rs 199 one-time offer, shown first
 	- **Audit**: Rs 399/week, marked as the most popular plan
 	- **Launch**: Rs 899/week
 - Contact dialog with a plan-specific email template and `mailto:` links
 - QR codes for the contact email and generated email template
+- Expandable Legal & Policies section covering Terms of Service, Privacy Policy, refunds, cancellation, service agreements, statements of work, data access, credentials, liability, and availability
 - Light and dark themes with preference persistence in `localStorage`
 - Responsive layout, metadata, canonical URL, favicon, Apple icon, and Open Graph/Twitter image references
 
@@ -95,9 +97,9 @@ The main page is a server component. The contact dialog and theme toggle are cli
 
 ## Contact Flow
 
-Selecting a plan opens a dialog addressed to `midlry.mr@gmail.com`. The dialog includes a pre-filled subject and project-requirements template, a button to copy that template, a direct email link, and QR codes generated in the browser. Recurring plans are weekly; Lite Audit is a one-time offer.
+Selecting a plan opens a dialog addressed to `midlry.mr@gmail.com`. The dialog includes a pre-filled subject and project-requirements template, a button to copy that template, a direct email link, and QR codes generated in the browser. Weekly plans represent weekly capacity and are paid or confirmed on an ad hoc basis; there is no automatic renewal. Lite Audit is a one-time offer.
 
-There is currently no active payment provider or checkout verification implementation. Razorpay and other operational integrations remain planned work; do not treat plan selection as a completed subscription purchase.
+There is currently no active payment provider or checkout verification implementation. Payments are handled manually after project confirmation. Razorpay and other operational integrations remain planned work; do not treat plan selection as a completed purchase or automatic subscription.
 
 ## Deployment Notes
 
