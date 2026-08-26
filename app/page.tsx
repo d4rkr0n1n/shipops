@@ -75,6 +75,34 @@ const capabilities = [
     "Kubernetes, observability, backups, and incident playbooks built in.",
   ],
 ];
+const deliverables = [
+  {
+    title: "CI/CD pipeline",
+    description:
+      "A working deployment flow with test checks, build steps, and production-safe release automation.",
+  },
+  {
+    title: "Cloud infrastructure",
+    description:
+      "Infrastructure defined in code so dev, staging, and production behave consistently and can be recreated.",
+  },
+  {
+    title: "Monitoring & alerts",
+    description:
+      "Dashboards, uptime checks, and notifications that tell you when things break before users do.",
+  },
+  {
+    title: "Reliability upgrades",
+    description:
+      "Health checks, backups, rollback plans, and performance fixes that make the system easier to trust.",
+  },
+];
+const experience = [
+  "Automated key approval-heavy workflows, reducing processing time by 30–40% across internal teams.",
+  "Improved system reliability by designing Spring Boot microservices with 20–25% faster response time and fewer production incidents.",
+  "Integrated DevSecOps checks (SAST, SCA, secrets hygiene) into CI/CD pipelines, helping cut vulnerability occurrences by ~35%.",
+  "Collaborated with cross-functional tech + operations teams to streamline deployments, shrinking release cycles from weekly to 2–3 days.",
+];
 const scope = {
   included: [
     "Infrastructure and delivery work in your existing cloud accounts",
@@ -107,6 +135,14 @@ const faqs = [
     "For weekly plans, cancel before your next renewal to stop future charges. You can request a pause at the end of the current billing period for up to three weeks; work and billing resume afterward unless you cancel. Lite Audit is a one-time offer with no renewal.",
   ],
   [
+    "How do I pay?",
+    "Secure manual payment via UPI or bank transfer after project confirmation.",
+  ],
+  [
+    "Who operates ShipOps, and is GST charged?",
+    "ShipOps is currently operated by Mridul Roy as an independent DevOps consulting service. GST is not charged while the service provider is not registered under GST.",
+  ],
+  [
     "What happens to unused capacity?",
     "Weekly capacity reserves our availability for that billing week and does not roll over. If priorities change, use the queue to direct the remaining time to documentation, reliability, security, or cost improvements.",
   ],
@@ -125,13 +161,26 @@ export default function Home() {
           <span className="dot">.</span>
         </a>
         <nav>
+          <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
           <a href="#scope">Scope</a>
           <a href="#process">Process</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
         </nav>
-      <div className="nav-actions">
+        <div className="nav-actions">
+          <span className="nav-profile-name">Mridul Roy</span>
+          <a className="social-link" href="https://github.com/d4rkr0n1n" target="_blank" rel="noreferrer" aria-label="Mridul Roy on GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.5a9.5 9.5 0 0 0-3 18.51c.47.09.64-.2.64-.45v-1.67c-2.62.57-3.17-1.11-3.17-1.11-.43-1.09-1.05-1.38-1.05-1.38-.86-.59.07-.58.07-.58.95.07 1.45.98 1.45.98.85 1.45 2.23 1.03 2.77.79.09-.62.33-1.03.6-1.27-2.09-.24-4.29-1.05-4.29-4.67 0-1.03.37-1.87.98-2.53-.1-.24-.42-1.2.09-2.5 0 0 .8-.26 2.62.97a9.1 9.1 0 0 1 4.77 0c1.82-1.23 2.62-.97 2.62-.97.51 1.3.19 2.26.09 2.5.61.66.98 1.5.98 2.53 0 3.63-2.2 4.43-4.3 4.66.34.3.64.87.64 1.76v2.61c0 .25.17.54.65.45A9.5 9.5 0 0 0 12 2.5Z" />
+            </svg>
+          </a>
+          <a className="social-link" href="https://www.linkedin.com/in/d4rkr0n1n/" target="_blank" rel="noreferrer" aria-label="Mridul Roy on LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M5.2 6.8A1.7 1.7 0 1 0 5.2 3.4a1.7 1.7 0 0 0 0 3.4ZM3.7 20.6h3V8.5h-3v12.1ZM8.6 8.5h2.9v1.65h.04c.4-.76 1.38-1.96 3.03-1.96 3.24 0 3.84 2.13 3.84 4.9v7.51h-3v-6.66c0-1.59-.03-3.63-2.21-3.63-2.21 0-2.55 1.72-2.55 3.51v6.78h-3V8.5Z" />
+            </svg>
+          </a>
         <ThemeToggle />
         <a className="nav-cta" href="#pricing">
           View plans <span>↗</span>
@@ -141,7 +190,7 @@ export default function Home() {
       <section className="hero shell" id="top">
         <div className="hero-copy">
           <p className="eyebrow">
-            <span /> Your DevOps guy, on subscription
+            <span /> Your senior DevOps partner, on subscription
           </p>
           <h1>
             SHIP FASTER.
@@ -161,57 +210,38 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="terminal-wrap">
-          <div className="terminal-top">
-            <span>◈ shipops / production</span>
-            <span className="live">
-              <i /> LIVE
-            </span>
+        <div className="engagement-panel">
+          <div className="engagement-heading">
+            <span className="panel-kicker">HOW WE WORK</span>
+            <span className="panel-status">● ACCEPTING WORK</span>
           </div>
-          <div className="terminal-body">
-            <p>
-              <span className="muted">$</span> shipops deploy{" "}
-              <span className="green">--production</span>
-            </p>
-            <div className="log">
+          <h2>Focused infrastructure work, made visible.</h2>
+          <div className="engagement-list">
+            <div>
+              <span>01</span>
               <p>
-                <span>01:42:06</span> Validating Terraform plan...
-              </p>
-              <p>
-                <span>01:42:08</span> Building container <b>api:8f2c1a</b>
-              </p>
-              <p>
-                <span>01:42:24</span> Running security checks...
-              </p>
-              <p>
-                <span>01:42:31</span> Rolling out to <b>eu-west-1</b>
+                <strong>One active request</strong>
+                Keep a prioritized queue and move through it without competing
+                handoffs.
               </p>
             </div>
-            <div className="success">
-              <div>✓</div>
+            <div>
+              <span>02</span>
               <p>
-                <strong>Deployment successful</strong>
-                <br />
-                <span>Production is healthy · 41s</span>
+                <strong>Async by default</strong>
+                Trello is the source of truth, with Slack for lightweight
+                coordination and notifications.
               </p>
             </div>
-            <div className="metrics">
-              <div>
-                <span>UPTIME</span>
-                <strong>99.99%</strong>
-              </div>
-              <div>
-                <span>DEPLOY FREQ.</span>
-                <strong>12.4/day</strong>
-              </div>
-              <div>
-                <span>MTTR</span>
-                <strong>8 min</strong>
-              </div>
+            <div>
+              <span>03</span>
+              <p>
+                <strong>Delivered to your stack</strong>
+                Work, documentation, and implementation stay in your accounts
+                and repositories.
+              </p>
             </div>
           </div>
-          <div className="float-tag tag-one">ZERO DOWNTIME</div>
-          <div className="float-tag tag-two">COST ↓ 32%</div>
         </div>
       </section>
       <div className="tech-strip">
@@ -220,6 +250,68 @@ export default function Home() {
           KUBERNETES <span>✦</span> AWS / GCP / AZURE <span>✦</span> GITOPS
         </div>
       </div>
+      <section className="about shell" id="about">
+        <div className="about-card">
+          <div className="about-copy">
+            <p className="eyebrow">
+              <span /> About me
+            </p>
+            <h2>
+              MRIDUL <em>ROY</em>
+            </h2>
+            <p className="about-location">Navi Mumbai, Maharashtra, India</p>
+            <p>
+              I’m a DevOps-minded engineer focused on cloud systems, automation,
+              and dependable delivery. My work sits at the intersection of
+              infrastructure operations, backend engineering, and developer
+              experience—building the foundations that help teams ship faster
+              without introducing chaos.
+            </p>
+            <p>
+              From CI/CD pipelines and container workflows to infrastructure as
+              code and service reliability, I build practical systems that are
+              easy to operate, easy to trust, and ready to scale with the product.
+            </p>
+            <div className="about-stats">
+              <div>
+                <strong>852</strong>
+                <span>followers</span>
+              </div>
+              <div>
+                <strong>500+</strong>
+                <span>connections</span>
+              </div>
+              <div>
+                <strong>Cloud</strong>
+                <span>DevOps & automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="deliverables shell" id="deliverables">
+        <div className="section-intro">
+          <div>
+            <p className="eyebrow">
+              <span /> Examples of deliverables
+            </p>
+            <h2>
+              WHAT YOU CAN
+              <br />
+              <em>ACTUALLY GET.</em>
+            </h2>
+          </div>
+        </div>
+        <div className="deliverable-grid">
+          {deliverables.map((item) => (
+            <article key={item.title} className="deliverable-card">
+              <span className="deliverable-tag">Example</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="services shell" id="services">
         <div className="section-intro">
           <div>
@@ -251,6 +343,23 @@ export default function Home() {
             </article>
           ))}
         </div>
+      </section>
+      <section className="experience shell" id="experience">
+        <div className="experience-intro">
+          <p className="eyebrow">
+            <span /> Relevant experience
+          </p>
+          <h2>
+            RESULTS THAT
+            <br />
+            <em>MOVE SYSTEMS.</em>
+          </h2>
+        </div>
+        <ul className="experience-list">
+          {experience.map((achievement) => (
+            <li key={achievement}>{achievement}</li>
+          ))}
+        </ul>
       </section>
       <section className="scope" id="scope">
         <div className="shell">
@@ -305,8 +414,8 @@ export default function Home() {
                 Your dedicated Trello board is the single source of truth for
                 all requests, feedback, approvals, and updates. Slack access is
                 also included for lightweight coordination and notifications.
-                Delivery typically takes 48–72 hours, depending on scope,
-                access, and complexity.
+                Most small requests are completed within 48–72 hours. Larger
+                implementations are broken into weekly delivery milestones.
               </p>
             </article>
             <article>
@@ -329,7 +438,7 @@ export default function Home() {
             <h2>
               ONE SUBSCRIPTION.
               <br />
-              <em>ZERO BOTTLENECKS.</em>
+              <em>FEWER INFRASTRUCTURE BOTTLENECKS.</em>
             </h2>
           </div>
           <ol>
@@ -348,8 +457,8 @@ export default function Home() {
               <div>
                 <strong>We build in your stack</strong>
                 <p>
-                  Work ships in weekly cycles with full visibility in your
-                  existing tools.
+                  Most small work ships in 48–72 hours; larger work moves in
+                  weekly milestones with full visibility in your existing tools.
                 </p>
               </div>
             </li>
@@ -440,6 +549,188 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="legal shell" id="legal">
+        <div className="legal-intro">
+          <p className="eyebrow">
+            <span /> Legal &amp; policies
+          </p>
+          <h2>
+            CLEAR TERMS.
+            <br />
+            <em>NO SURPRISES.</em>
+          </h2>
+          <p>
+            The basics of working with ShipOps, written plainly. These policies
+            apply to the website and consulting services operated by Mridul Roy.
+          </p>
+        </div>
+        <div className="legal-list">
+          <details open>
+            <summary>
+              Terms of Service
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                By requesting or engaging ShipOps services, you agree to confirm
+                the scope, plan, price, access, and delivery expectations before
+                work begins. A plan selection is an enquiry, not a completed
+                purchase. Work starts after project confirmation and payment
+                arrangements are agreed.
+              </p>
+              <p>
+                ShipOps provides DevOps consulting and implementation within the
+                agreed plan capacity. Delivery depends on scope, access,
+                approvals, and third-party systems. Cloud-provider, SaaS, domain,
+                and other third-party charges are paid by the client.
+              </p>
+              <p>
+                Work is delivered into the client&apos;s accounts and repositories.
+                After outstanding invoices are paid, the client owns the
+                project-specific implementation and documentation. Either party
+                may pause or end the engagement according to the agreed billing
+                terms.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              No Refunds
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Payments are non-refundable once work has been scheduled or
+                started. Please confirm that the plan, scope, and timing fit
+                before payment. Any exception must be agreed in writing before
+                work begins.
+              </p>
+              <p>
+                Email is the official written channel for approvals, scope
+                changes, payment decisions, and other engagement-related
+                confirmations. These email records will be treated as the
+                written record of the parties&apos; agreement.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Cancellation Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Payments are handled on an ad hoc basis, so there is no automatic
+                renewal or long-term subscription commitment. If the service is
+                not a good fit, you can simply choose not to book or pay for the
+                following week. Any work already confirmed or started for the
+                current period remains payable, and unused capacity does not roll
+                over. Lite Audit is a one-time offer.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Service Agreement
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Before work starts, both parties confirm the selected plan,
+                services, price, payment terms, access requirements, delivery
+                expectations, and responsibilities. The confirmed agreement
+                governs the engagement together with these policies.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Statement-of-Work Process
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Larger or clearly defined implementations are documented in a
+                statement of work before execution. It records the objective,
+                deliverables, assumptions, dependencies, timeline, and approval
+                criteria. Any material scope change is reviewed and agreed in
+                writing before it is added.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Data-access and Credential-handling Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                Access is limited to the systems, repositories, and data needed
+                for the agreed work. Clients should provide temporary,
+                least-privilege access wherever possible and revoke access when
+                the engagement ends.
+              </p>
+              <p>
+                Do not send passwords, private keys, API tokens, or other
+                secrets by email or through the website. Use the client&apos;s
+                approved secure secret-management process. ShipOps will not copy,
+                disclose, or use client data except as needed to provide the
+                agreed services.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Liability and Service-availability Boundaries
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                ShipOps will provide services with reasonable care, but does not
+                guarantee uninterrupted availability, zero incidents, or a
+                specific business result. Delivery can be affected by cloud
+                providers, SaaS tools, networks, client systems, access delays,
+                approvals, and events outside ShipOps&apos;s reasonable control.
+              </p>
+              <p>
+                ShipOps is not a 24/7 help desk or guaranteed on-call service.
+                Clients remain responsible for their applications, accounts,
+                backups, business decisions, and third-party charges. To the
+                extent permitted by law, liability is limited to the fees paid
+                for the specific service giving rise to the claim, excluding
+                indirect or consequential losses.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              Privacy Policy
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div className="legal-content">
+              <p>
+                ShipOps collects information you choose to share, such as your
+                name, email address, company details, project requirements, and
+                messages sent through the contact flow. This information is used
+                only to respond to enquiries, assess fit, and deliver requested
+                services.
+              </p>
+              <p>
+                ShipOps does not sell your personal information. Information may
+                be shared with service providers needed to communicate or deliver
+                the work, and only for that purpose. You should not send
+                passwords, private keys, payment credentials, or other secrets
+                through the website or email enquiry.
+              </p>
+              <p>
+                To ask about, correct, or delete information you have shared,
+                contact <a href="mailto:midlry.mr@gmail.com">midlry.mr@gmail.com</a>.
+                This policy may be updated when the service or its tools change.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
       <section className="cta" id="contact">
         <div className="shell">
           <p className="eyebrow light">
@@ -455,13 +746,24 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <footer className="shell">
-        <a className="brand" href="#top">
+      <footer className="shell footer">
+        <a className="brand footer-brand" href="#top">
           <span className="brand-mark">S</span> SHIPOPS
           <span className="dot">.</span>
         </a>
-        <p>DevOps-as-a-Service for ambitious product teams.</p>
-        <p>© 2026 ShipOps</p>
+        <div className="footer-copy">
+          <p>Subscription DevOps for Indian startups and small product teams that need reliable cloud infrastructure without hiring a full-time DevOps engineer.</p>
+          <p>By Mridul Roy.</p>
+        </div>
+        <div className="footer-links">
+          <a href="https://github.com/d4rkr0n1n" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/d4rkr0n1n/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <span>© 2026 ShipOps</span>
+        </div>
       </footer>
     </main>
   );
