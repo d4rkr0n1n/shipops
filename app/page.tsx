@@ -389,7 +389,7 @@ export default function Home() {
                 className="testimonial-link"
                 href={testimonial.linkedinUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label={`${testimonial.name} on LinkedIn`}
                 title="LinkedIn"
               >
