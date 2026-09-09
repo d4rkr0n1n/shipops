@@ -382,7 +382,18 @@ export default function Home() {
         </div>
         <article className="testimonial-card">
           <div className="testimonial-header">
-            <div className="testimonial-avatar">SD</div>
+            <div
+              className="testimonial-avatar"
+              aria-hidden="true"
+            >
+              {testimonial.name
+                .split(" ")
+                .filter(Boolean)
+                .map((part) => part[0])
+                .join("")
+                .slice(0, 2)
+                .toUpperCase()}
+            </div>
             <div>
               <p className="testimonial-name">{testimonial.name}</p>
               <a
