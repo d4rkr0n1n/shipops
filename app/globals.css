@@ -3,18 +3,22 @@
   --font-geist-mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
 }
 :root {
-  --ink: #101614;
-  --paper: #f2f0e8;
-  --lime: #c7ff29;
-  --mint: #8effca;
-  --line: #c9c8bf;
-  --muted: #656a65;
+  --ink: #0f1d31;
+  --paper: #eef6ff;
+  --lime: #60a5fa;
+  --mint: #bfdbfe;
+  --line: #cfe0f7;
+  --muted: #49627f;
+  --lime-dark: #1d4ed8;
 }
 :root[data-theme="dark"] {
-  --ink: #eef3ee;
-  --paper: #0d1210;
-  --line: #303936;
-  --muted: #a3aca7;
+  --ink: #edf5ff;
+  --paper: #071827;
+  --line: #1d3552;
+  --muted: #a7bbd6;
+  --lime: #7bb6ff;
+  --mint: #d7ebff;
+  --lime-dark: #60a5fa;
 }
 * {
   box-sizing: border-box;
@@ -66,7 +70,7 @@ a {
   font-size: 15px;
 }
 .dot {
-  color: #83ac00;
+  color: #2563eb;
 }
 .nav nav {
   display: flex;
@@ -145,19 +149,19 @@ a {
 :root[data-theme="dark"] .scope,
 :root[data-theme="dark"] .process,
 :root[data-theme="dark"] .plan.featured {
-  background: #080d0b;
+  background: #081827;
   color: #fff;
 }
 :root[data-theme="dark"] .plan {
-  background: #151b18;
+  background: #10233d;
 }
 :root[data-theme="dark"] .featured .plan-choice {
   background: var(--lime);
-  color: #101614;
+  color: #071827;
 }
 :root[data-theme="dark"] .contact-dialog-card {
-  background: #151b18;
-  color: #eef3ee;
+  background: #10233d;
+  color: #edf5ff;
 }
 :root[data-theme="dark"] .contact-dialog-content strong,
 :root[data-theme="dark"] .dialog-close {
@@ -197,7 +201,7 @@ a {
 .eyebrow span {
   width: 25px;
   height: 2px;
-  background: #7a9d0b;
+  background: #2563eb;
 }
 h1,
 h2 {
@@ -214,7 +218,7 @@ h2 {
 }
 h1 em,
 h2 em {
-  color: #769b00;
+  color: #2563eb;
   font-style: normal;
 }
 .hero-lede {
@@ -298,7 +302,7 @@ h2 em {
   box-shadow: 14px 14px 0 var(--lime);
 }
 :root[data-theme="dark"] .engagement-panel {
-  background: #151b18;
+  background: #10233d;
 }
 .engagement-heading {
   display: flex;
@@ -313,7 +317,7 @@ h2 em {
   color: var(--muted);
 }
 .panel-status {
-  color: #688800;
+  color: #2563eb;
 }
 .engagement-panel h2 {
   font-size: clamp(32px, 4vw, 52px);
@@ -336,7 +340,7 @@ h2 em {
   padding-bottom: 0;
 }
 .engagement-list > div > span {
-  color: #789400;
+  color: #2563eb;
   font: 700 10px/1 var(--font-geist-mono), monospace;
 }
 .engagement-list p {
@@ -359,7 +363,7 @@ h2 em {
   letter-spacing: 0.08em;
 }
 :root[data-theme="dark"] .tech-strip {
-  color: #101614;
+  color: #071827;
 }
 .tech-strip div {
   width: max-content;
@@ -376,7 +380,7 @@ h2 em {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.28);
   padding: 34px;
-  box-shadow: 12px 12px 0 rgba(199, 255, 41, 0.22);
+  box-shadow: 12px 12px 0 rgba(96, 165, 250, 0.22);
 }
 :root[data-theme="dark"] .about-card {
   background: rgba(21, 27, 24, 0.9);
@@ -431,7 +435,7 @@ h2 em {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.28);
   padding: 30px 28px;
-  box-shadow: 12px 12px 0 rgba(199, 255, 41, 0.2);
+  box-shadow: 12px 12px 0 rgba(96, 165, 250, 0.2);
 }
 :root[data-theme="dark"] .testimonial-card {
   background: rgba(21, 27, 24, 0.9);
@@ -498,7 +502,7 @@ h2 em {
 .deliverable-tag {
   display: inline-block;
   margin-bottom: 18px;
-  color: #101614;
+  color: #071827;
   background: var(--lime);
   font: 700 9px/1 var(--font-geist-mono), monospace;
   text-transform: uppercase;
@@ -543,7 +547,7 @@ h2 em {
 .cap-icon {
   font-size: 28px;
   margin: 38px 0 28px;
-  color: #799d06;
+  color: #2563eb;
 }
 .capability-grid h3 {
   font-size: 18px;
@@ -821,7 +825,7 @@ h2 em {
   margin: 13px 0;
 }
 .plan li span {
-  color: #7a9d0b;
+  color: #2563eb;
   margin-right: 10px;
 }
 .plan-note {
@@ -890,12 +894,12 @@ h2 em {
   display: inline-flex;
   gap: 16px;
   align-items: center;
-  border-bottom: 2px solid #789d00;
+  border-bottom: 2px solid #2563eb;
   padding-bottom: 5px;
   font-weight: 900;
 }
 .dialog-email span {
-  color: #789d00;
+  color: #2563eb;
 }
 .qr-wrap {
   display: grid;
@@ -1014,7 +1018,7 @@ h2 em {
   display: none;
 }
 .faq-list summary span {
-  color: #769b00;
+  color: #2563eb;
   font: 400 24px/15px monospace;
   transition: transform 0.2s;
 }
@@ -1059,7 +1063,7 @@ h2 em {
   display: none;
 }
 .legal-list summary span {
-  color: #769b00;
+  color: #2563eb;
   font: 400 24px/15px monospace;
   transition: transform 0.2s;
 }
@@ -1085,7 +1089,7 @@ h2 em {
   text-underline-offset: 3px;
 }
 .cta {
-  background: #779d00;
+  background: #2563eb;
   color: #fff;
   text-align: center;
   padding: 100px 0;
@@ -1104,7 +1108,7 @@ h2 em {
   color: #101614;
 }
 .light-button span {
-  color: #729600;
+  color: #1d4ed8;
 }
 .footer {
   min-height: 120px;
