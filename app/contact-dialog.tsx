@@ -46,7 +46,7 @@ Thanks,
         QRCode.toCanvas(canvas, qrMailto, {
           width: 176,
           margin: 1,
-          color: { dark: "#101614", light: "#ffffff" },
+          color: { dark: "#0f1d31", light: "#ffffff" },
         }).catch(() => {}),
       )
       .catch(() => {});
@@ -62,7 +62,7 @@ Thanks,
           width: 220,
           margin: 2,
           errorCorrectionLevel: "L",
-          color: { dark: "#101614", light: "#ffffff" },
+          color: { dark: "#0f1d31", light: "#ffffff" },
         }).catch(() => {}),
       )
       .catch(() => {});

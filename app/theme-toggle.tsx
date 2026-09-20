@@ -4,35 +4,45 @@ import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
+function resolveInitialTheme(): Theme {
+  if (typeof document === "undefined") return "light";
+
+  const savedTheme = (() => {
+    try {
+      return localStorage.getItem("shipops-theme");
+    } catch {
+      return null;
+    }
+  })();
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() =>
-    typeof document !== "undefined" && document.documentElement.dataset.theme === "dark" ? "dark" : "light",
-  );
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
-    let initialTheme: Theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    try {
-      const savedTheme = localStorage.getItem("shipops-theme");
-      if (savedTheme === "light" || savedTheme === "dark") initialTheme = savedTheme;
-    } catch {
-      // Storage unavailable or denied.
-    }
-
+    const initialTheme = resolveInitialTheme();
     document.documentElement.dataset.theme = initialTheme;
     document.documentElement.style.colorScheme = initialTheme;
     setTheme(initialTheme);
   }, []);
 
   function toggleTheme() {
-    const currentTheme = theme;
-    const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
+    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = nextTheme;
     document.documentElement.style.colorScheme = nextTheme;
+
     try {
       localStorage.setItem("shipops-theme", nextTheme);
     } catch {
       // Storage unavailable or denied.
     }
+
     setTheme(nextTheme);
   }
 
