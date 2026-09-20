@@ -33,19 +33,17 @@ export default function ThemeToggle() {
   }, []);
 
   function toggleTheme() {
-    setTheme((currentTheme) => {
-      const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = nextTheme;
-      document.documentElement.style.colorScheme = nextTheme;
+    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
 
-      try {
-        localStorage.setItem("shipops-theme", nextTheme);
-      } catch {
-        // Storage unavailable or denied.
-      }
+    try {
+      localStorage.setItem("shipops-theme", nextTheme);
+    } catch {
+      // Storage unavailable or denied.
+    }
 
-      return nextTheme;
-    });
+    setTheme(nextTheme);
   }
 
   return (
