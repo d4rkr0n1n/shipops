@@ -317,7 +317,7 @@ h2 em {
   color: var(--muted);
 }
 .panel-status {
-  color: #2563eb;
+  color: var(--lime-dark);
 }
 .engagement-panel h2 {
   font-size: clamp(32px, 4vw, 52px);
