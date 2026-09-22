@@ -22,7 +22,7 @@ ShipOps is a single-page website for subscription DevOps services for Indian sta
 
 ## Tech Stack
 
-- Next.js 16.3.1 with the App Router
+- Next.js 16.3.5 with the App Router
 - React 19
 - TypeScript
 - Tailwind CSS 4 through PostCSS
@@ -88,9 +88,11 @@ app/
 	contact-dialog.tsx       Plan-specific email dialog and QR codes
 	theme-toggle.tsx         Light/dark theme control
 	layout.tsx               Metadata, icons, and root layout
+	opengraph-image.tsx      Blue-themed Open Graph and Twitter image
 	globals.css              Site layout, responsive styles, and themes
-	# (planned) api/checkout/verify/      Checkout verification route (not yet implemented)
 public/                    Static assets
+.github/workflows/	       GitHub Pages deployment workflow
+.agents/skills/	          Repository-specific agent skills
 ```
 
 The main page is a server component. The contact dialog and theme toggle are client components because they use browser APIs and interactive state.
@@ -103,14 +105,20 @@ There is currently no active payment provider or checkout verification implement
 
 ## Deployment Notes
 
-The app can be deployed to a Node-compatible Next.js host using:
+The GitHub Actions workflow in `.github/workflows/nextjs.yml` builds the site and publishes the generated `out/` directory to GitHub Pages. It supplies the deployed `NEXT_PUBLIC_SITE_URL` automatically. The checked-in `.env.example` uses the same public URL for local or manual builds.
+
+For a local production-server check, use:
 
 ```bash
 npm run build
 npm run start
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the public origin before building so generated metadata points to the deployed site. The current Next configuration does not enable static export, so a host that supports running Next.js is expected.
+Set `NEXT_PUBLIC_SITE_URL` to the public origin before building so generated metadata points to the correct site. The current workflow is the source of truth for GitHub Pages deployment; `npm run start` serves the production build locally through Next.js.
+
+## Documentation Maintenance
+
+After changing application code, configuration, dependencies, or deployment behavior, run the repository `docs-sync` skill. It checks the change against `README.md` and `AGENTS.md`, updates only durable and factual documentation, and preserves the generated Next.js rules at the top of `AGENTS.md`.
 
 ## Status
 

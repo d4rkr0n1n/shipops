@@ -54,3 +54,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Keep changes focused on the requested behavior and preserve existing user edits.
 - Preserve the generated `nextjs-agent-rules` block above; place repository-specific instructions below it.
 - Do not edit `.next/` or other generated build output. Do not commit secrets or local `.env` files.
+
+## Documentation Synchronization
+
+- After any change to application code, configuration, dependencies, or deployment workflows, use `.agents/skills/docs-sync/SKILL.md` to review and update `README.md` and this file.
+- Keep documentation factual and current; do not document planned behavior as implemented.
+- Preserve the generated `nextjs-agent-rules` block above when updating this file.
