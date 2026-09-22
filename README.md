@@ -88,6 +88,7 @@ app/
 	contact-dialog.tsx       Plan-specific email dialog and QR codes
 	theme-toggle.tsx         Light/dark theme control
 	layout.tsx               Metadata, icons, and root layout
+	opengraph-image.tsx      Blue-themed Open Graph and Twitter image
 	globals.css              Site layout, responsive styles, and themes
 public/                    Static assets
 .github/workflows/	       GitHub Pages deployment workflow

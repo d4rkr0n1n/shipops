@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     description,
     siteName: "ShipOps",
     locale: "en_IN",
-    images: [{ url: assetUrl("og.png"), width: 1200, height: 630, alt: "ShipOps — Ship faster. Sleep better." }],
+    images: [{ url: assetUrl("opengraph-image"), width: 1200, height: 630, alt: "ShipOps — Ship faster. Sleep better." }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: [{ url: assetUrl("og.png"), alt: "ShipOps — Ship faster. Sleep better." }],
+    images: [{ url: assetUrl("opengraph-image"), alt: "ShipOps — Ship faster. Sleep better." }],
   },
 };
 
